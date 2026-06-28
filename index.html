@@ -63,21 +63,21 @@
     background:var(--primary-dark);
     color:#fff;
     display:flex; align-items:center; justify-content:space-between;
-    padding:.7rem 1rem;
+    padding:1.1rem 1.1rem;
     gap:.75rem;
   }
   .topbar .brand{
-    font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem;
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.45rem;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
-  .topbar .brand small{display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:.68rem; opacity:.78; letter-spacing:.02em;}
+  .topbar .brand small{display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:.85rem; opacity:.85; letter-spacing:.02em; margin-top:.1rem;}
   .call-btn{
     display:inline-flex; align-items:center; gap:.4rem;
     background:var(--accent); color:#1A1203;
-    font-weight:700; font-size:.88rem;
-    padding:.6rem .9rem; border-radius:999px;
+    font-weight:700; font-size:.95rem;
+    padding:.7rem 1.1rem; border-radius:999px;
     text-decoration:none; white-space:nowrap;
-    min-height:44px;
+    min-height:46px; flex-shrink:0;
   }
   .call-btn:active{transform:scale(.97);}
 
@@ -85,7 +85,7 @@
   .chipnav{
     background:var(--surface);
     border-bottom:1px solid var(--line);
-    position:sticky; top:56px; z-index:90;
+    position:sticky; top:84px; z-index:90;
   }
   .chipnav ul{
     display:flex; gap:.5rem; list-style:none; margin:0; padding:.6rem 1rem;
@@ -259,7 +259,7 @@
 
   <div class="hero">
     <span class="eyebrow">Servicio de Salud del Reloncaví</span>
-    <h1>Servicio de Urgencia<br>Hospital de Frutillar</h1>
+    <h1>Infórmate antes de tu visita</h1>
     <p class="subtitle">Atención las 24 horas, todos los días del año. Esta página entrega información general para orientar tu consulta.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="tel:+56652326900">📞 Llamar a Urgencia</a>
@@ -282,15 +282,20 @@
         <span class="tag tag-open">24 horas · todos los días</span>
       </div>
       <div class="hours-row">
-        <div><strong>SAPU / Atención Primaria de Urgencia</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Para consultas de baja complejidad</span></div>
-        <span class="tag tag-info">Horario extendido — confirmar</span>
+        <div><strong>SAPU Frutillar</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Lun a Vie 17:00–24:00 hrs · Sáb, Dom y feriados 09:00–24:00 hrs</span></div>
+        <span class="tag tag-info">Horario extendido</span>
       </div>
       <div class="hours-row">
-        <div><strong>CESFAM / Consultorio</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Consultas y controles programados</span></div>
-        <span class="tag tag-info">Lun–Vie, horario diurno — confirmar</span>
+        <div><strong>CESFAM Frutillar</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Cristino Winkler N.º 751 · Lun a Jue 08:00–17:00 hrs · Vie 08:00–16:00 hrs</span></div>
+        <span class="tag tag-info">Horario hábil</span>
+      </div>
+      <div class="hours-row">
+        <div><strong>CECOSF Pantanosa</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Violeta Parra s/n, Sector Pantanosa · mismo horario que CESFAM</span></div>
+        <span class="tag tag-info">Horario hábil</span>
       </div>
     </div>
-    <p class="note warn">✏️ <strong>Editar antes de publicar:</strong> confirma y completa los horarios reales y vigentes del SAPU/CESFAM de tu sector con la administración del hospital.</p>
+    <a class="btn btn-primary" href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener" style="margin-top:.9rem;">📅 Pedir hora en CESFAM / CECOSF</a>
+    <p class="note">Las horas para CESFAM Frutillar y CECOSF Pantanosa se solicitan en línea a través de HoraSalud, no en el Servicio de Urgencia.</p>
   </section>
 
   <!-- CATEGORIZACIÓN -->
@@ -305,7 +310,7 @@
       <div class="body">
         <h3>Emergencia vital</h3>
         <div class="meta">Atención inmediata</div>
-        <p class="examples">Ej.: paro cardiorrespiratorio, compromiso de conciencia severo, infarto agudo en curso, convulsión activa, politraumatismo grave.</p>
+        <p class="examples">Ej.: paro cardiorrespiratorio, compromiso de conciencia severo, infarto agudo en curso, convulsión activa, politraumatismo grave, shock de cualquier causa, insuficiencia respiratoria severa, anafilaxia con compromiso de vía aérea.</p>
       </div>
     </div>
     <div class="triage-card c2">
@@ -313,36 +318,35 @@
       <div class="body">
         <h3>Emergencia</h3>
         <div class="meta">Espera máxima referencial: 30 min</div>
-        <p class="examples">Ej.: dolor torácico, compromiso de conciencia, quemaduras en cara/cuello/genitales, sangrado profuso, abdomen agudo.</p>
+        <p class="examples">Ej.: dolor torácico, compromiso de conciencia, quemaduras en cara/cuello/genitales, sangrado profuso, abdomen agudo, sospecha de accidente cerebrovascular, dificultad respiratoria moderada a severa, fracturas expuestas, intoxicación con compromiso hemodinámico.</p>
       </div>
     </div>
     <div class="triage-card c3">
       <div class="code">C3</div>
       <div class="body">
         <h3>Urgencia (mediana complejidad)</h3>
-        <div class="meta">Espera variable según demanda</div>
-        <p class="examples">Ej.: dolor moderado, fiebre alta sin signos de alarma, heridas que requieren sutura.</p>
+        <div class="meta">Espera máxima referencial: 90 min</div>
+        <p class="examples">Ej.: dolor moderado, fiebre alta sin signos de alarma, heridas que requieren sutura, vómitos persistentes, deshidratación leve a moderada, crisis hipertensiva sin daño de órgano, dolor abdominal sin signos de irritación peritoneal.</p>
       </div>
     </div>
     <div class="triage-card c4">
       <div class="code">C4</div>
       <div class="body">
         <h3>Urgencia menor</h3>
-        <div class="meta">Puede esperar más tiempo</div>
-        <p class="examples">Ej.: cuadros respiratorios leves, curaciones simples, dolor leve.</p>
+        <div class="meta">Tiempos de espera prolongados</div>
+        <p class="examples">Ej.: cuadros respiratorios leves, curaciones simples, dolor leve, esguinces sin deformidad, conjuntivitis, cefalea leve sin signos de alarma. Se recomienda consultar en SAPU o CESFAM para una atención más oportuna.</p>
       </div>
     </div>
     <div class="triage-card c5">
       <div class="code">C5</div>
       <div class="body">
         <h3>Consulta de baja complejidad</h3>
-        <div class="meta">Atención no urgente</div>
-        <p class="examples">Ej.: control de tratamiento, síntomas crónicos estables, certificados. Habitualmente puede resolverse en atención primaria.</p>
+        <div class="meta">Tiempos de espera prolongados</div>
+        <p class="examples">Ej.: control de tratamiento, síntomas crónicos estables, certificados, renovación de receta, retiro de informes o resultados. Se recomienda consultar en SAPU o CESFAM, donde habitualmente se resuelve más rápido.</p>
       </div>
     </div>
 
     <p class="note">Los tiempos son referenciales y pueden variar según la saturación del servicio. Los pacientes más graves siempre tienen prioridad, independiente del orden de llegada.</p>
-    <p class="note warn">✏️ <strong>Editar antes de publicar:</strong> ajusta los tiempos y ejemplos según el protocolo de categorización vigente (AOC 1.2) del hospital, si difiere de la norma general MINSAL aquí resumida.</p>
   </section>
 
   <!-- TIEMPOS DE ESPERA -->
@@ -377,6 +381,12 @@
           <li>Sangrado abundante o trauma importante</li>
           <li>Signos de accidente cerebrovascular (debilidad/asimetría facial, dificultad para hablar)</li>
           <li>Fiebre alta con compromiso del estado general</li>
+          <li>Convulsiones</li>
+          <li>Vómitos con sangre o sangrado digestivo</li>
+          <li>Reacción alérgica severa (hinchazón de cara/garganta, dificultad para respirar)</li>
+          <li>Intoxicación o sospecha de sobredosis</li>
+          <li>Quemaduras extensas o profundas</li>
+          <li>Embarazo con sangrado o dolor intenso</li>
         </ul>
       </div>
       <div class="card">
@@ -386,6 +396,12 @@
           <li>Control de enfermedades crónicas estables</li>
           <li>Renovación de recetas o certificados</li>
           <li>Curaciones simples o dolor leve de días de evolución</li>
+          <li>Resfrío, gripe o cuadros virales leves</li>
+          <li>Dolor de garganta u otitis sin signos de alarma</li>
+          <li>Diarrea sin signos de deshidratación</li>
+          <li>Lumbago o dolores musculares leves</li>
+          <li>Control de presión arterial o glicemia</li>
+          <li>Vacunas y controles de niño sano</li>
         </ul>
       </div>
     </div>
@@ -419,12 +435,17 @@
 
     <details>
       <summary>¿Puedo ir acompañado?</summary>
-      <p>✏️ <em>Editar: confirma la política vigente de acompañantes en box y sala de espera (general, pediatría y casos especiales).</em></p>
+      <p>Se permite 1 acompañante para pacientes menores de 19 años, personas con discapacidad o personas mayores de 60 años.</p>
     </details>
 
     <details>
       <summary>¿Atienden urgencias pediátricas?</summary>
-      <p>✏️ <em>Editar: confirma si existe box o flujo diferenciado para urgencia pediátrica y a partir de qué edad se deriva a un centro de mayor complejidad.</em></p>
+      <p>Sí. El Servicio de Urgencia atiende a público general: adultos, niños y traumatismos.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden urgencias ginecológicas u obstétricas?</summary>
+      <p>Sí. En horario hábil (lunes a viernes de 08:00 a 17:00 hrs) la atención es realizada por matrona. Fuera de ese horario (noches, fines de semana y feriados), la atención es realizada por médico general.</p>
     </details>
 
     <details>
@@ -435,6 +456,21 @@
     <details>
       <summary>¿Qué hago si mis síntomas empeoran mientras espero?</summary>
       <p>Avisa de inmediato al personal de categorización o de enfermería; puedes ser re-evaluado y reclasificado a una categoría de mayor prioridad.</p>
+    </details>
+
+    <details>
+      <summary>¿Cómo pido una hora médica en el CESFAM o el CECOSF?</summary>
+      <p>Las horas no se solicitan en el Servicio de Urgencia. Se piden en línea a través de <a href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener">HoraSalud</a>.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden los fines de semana y feriados?</summary>
+      <p>El Servicio de Urgencia del hospital atiende los 365 días del año, las 24 horas. El SAPU también atiende fines de semana y feriados (09:00–24:00 hrs); el CESFAM y el CECOSF no atienden esos días.</p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si decido retirarme antes de ser atendido?</summary>
+      <p>Debes informar al personal de categorización o admisión. Si decides retirarte sin ser evaluado o sin completar tu atención, normalmente se te pedirá firmar un documento de alta voluntaria.</p>
     </details>
   </section>
 
