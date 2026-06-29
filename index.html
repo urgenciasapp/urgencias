@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urgencia · Hospital de Frutillar</title>
+<meta name="description" content="Información del Servicio de Urgencia del Hospital de Frutillar: horarios, categorización de pacientes, tiempos de espera, señales de alarma y preguntas frecuentes.">
+<meta name="theme-color" content="#0F6E7A">
+<link rel="canonical" href="https://urgenciasapp.github.io/urgencias/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Urgencia Hospital de Frutillar">
+<meta property="og:title" content="Urgencia · Hospital de Frutillar">
+<meta property="og:description" content="Horarios, categorización de pacientes, tiempos de espera y preguntas frecuentes del Servicio de Urgencia del Hospital de Frutillar.">
+<meta property="og:url" content="https://urgenciasapp.github.io/urgencias/">
+<meta property="og:locale" content="es_CL">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Urgencia · Hospital de Frutillar">
+<meta name="twitter:description" content="Horarios, categorización de pacientes, tiempos de espera y preguntas frecuentes del Servicio de Urgencia del Hospital de Frutillar.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230F6E7A'/%3E%3Crect x='28' y='14' width='8' height='36' rx='2' fill='white'/%3E%3Crect x='14' y='28' width='36' height='8' rx='2' fill='white'/%3E%3C/svg%3E">
+
+<!-- Carga de fuentes optimizada (no bloquea el render) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hospital",
+  "name": "Hospital de Frutillar",
+  "url": "https://urgenciasapp.github.io/urgencias/",
+  "telephone": "+56652326900",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Las Piedras s/n",
+    "addressLocality": "Frutillar",
+    "addressRegion": "Los Lagos",
+    "addressCountry": "CL"
+  },
+  "department": {
+    "@type": "MedicalClinic",
+    "name": "Servicio de Urgencia",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+}
+</script>
+
+<style>
+  :root{
+    --bg:#F7F7F3;
+    --surface:#FFFFFF;
+    --ink:#16282B;
+    --ink-soft:#48595C;
+    --primary:#0F6E7A;
+    --primary-dark:#0A4E57;
+    --primary-tint:#E3F1F1;
+    --accent:#C9842E;
+    --accent-tint:#F8EBD8;
+    --danger:#B3261E;
+    --danger-tint:#FBEAE8;
+    --line:#E1E0D9;
+    --radius:14px;
+    --maxw:720px;
+    font-size:17px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5rem;
+    color:var(--ink);
+  }
+  p{margin:0 0 1rem;}
+  a{color:var(--primary-dark);}
+  ul{margin:0; padding:0;}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--ink); color:#fff; padding:.6rem 1rem; z-index:200;
+  }
+  .skip-link:focus{left:.5rem; top:.5rem;}
+  *:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- Barra de accesibilidad ---------- */
+  .a11y-bar{
+    display:flex; align-items:center; gap:.5rem; justify-content:flex-end;
+    background:#0A2326; color:#fff; padding:.45rem .9rem; font-size:.78rem;
+  }
+  .a11y-bar .a11y-label{opacity:.75; margin-right:.1rem;}
+  .a11y-bar button{
+    background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.35);
+    border-radius:6px; padding:.35rem .6rem; font-size:.78rem; font-weight:600; cursor:pointer;
+    min-height:34px;
+  }
+  .a11y-bar button[aria-pressed="true"]{background:var(--accent); color:#1A1203; border-color:var(--accent);}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:100;
+    background:var(--primary-dark);
+    color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.1rem 1.1rem;
+    gap:.75rem;
+  }
+  .topbar .brand{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.45rem;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .topbar .brand small{display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:.85rem; opacity:.85; letter-spacing:.02em; margin-top:.1rem;}
+  .call-btn{
+    display:inline-flex; align-items:center; gap:.4rem;
+    background:var(--accent); color:#1A1203;
+    font-weight:700; font-size:.95rem;
+    padding:.7rem 1.1rem; border-radius:999px;
+    text-decoration:none; white-space:nowrap;
+    min-height:46px; flex-shrink:0;
+  }
+  .call-btn:active{transform:scale(.97);}
+
+  /* ---------- Chip nav ---------- */
+  .chipnav{
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:84px; z-index:90;
+  }
+  .chipnav ul{
+    display:flex; gap:.5rem; list-style:none; margin:0; padding:.6rem 1rem;
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .chipnav ul::-webkit-scrollbar{display:none;}
+  .chipnav a{
+    display:inline-block; white-space:nowrap;
+    background:var(--primary-tint); color:var(--primary-dark);
+    font-size:.85rem; font-weight:600;
+    padding:.45rem .85rem; border-radius:999px; text-decoration:none;
+  }
+
+  main{max-width:var(--maxw); margin:0 auto; padding:0 1rem;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:1.75rem 0 1rem;}
+  .eyebrow{
+    display:inline-block; font-size:.74rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase;
+    color:var(--primary-dark); background:var(--primary-tint);
+    padding:.25rem .6rem; border-radius:999px; margin-bottom:.7rem;
+  }
+  .hero h1{font-size:1.85rem;}
+  .hero .subtitle{color:var(--ink-soft); font-size:1.02rem; margin-bottom:1.1rem;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.1rem;}
+  .btn{
+    display:inline-flex; align-items:center; gap:.4rem;
+    min-height:46px; padding:.7rem 1.1rem; border-radius:10px;
+    font-weight:600; font-size:.92rem; text-decoration:none;
+    border:1px solid transparent; cursor:pointer; font-family:'Inter',sans-serif;
+  }
+  .btn-primary{background:var(--primary); color:#fff;}
+  .btn-secondary{background:var(--surface); color:var(--primary-dark); border:1px solid var(--line);}
+
+  .alert{
+    background:var(--danger-tint); border:1px solid #EFC9C5;
+    border-left:5px solid var(--danger);
+    border-radius:10px; padding:.9rem 1rem; font-size:.92rem;
+    color:#6E1813;
+  }
+  .alert strong{color:var(--danger);}
+
+  /* ---------- Sections ---------- */
+  section{padding:1.6rem 0; border-top:1px solid var(--line); scroll-margin-top:132px;}
+  section:first-of-type{border-top:none;}
+  .section-head{margin-bottom:1rem;}
+  .section-head h2{font-size:1.35rem;}
+  .section-head .desc{color:var(--ink-soft); font-size:.93rem; margin:0;}
+
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:1rem 1.1rem; margin-bottom:.8rem;
+  }
+  .card ul{margin:.4rem 0 0; padding-left:1.1rem; font-size:.9rem; color:var(--ink-soft);}
+  .card li{margin-bottom:.3rem;}
+
+  /* Animación de aparición al hacer scroll */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.is-visible{opacity:1; transform:none;}
+
+  /* Hover sutil solo en dispositivos con puntero real */
+  @media (hover:hover){
+    .card:hover, .triage-card:hover, .hours-row:hover, .contact-list li:hover, .bring-card:hover{
+      box-shadow:0 6px 16px rgba(0,0,0,.08); transform:translateY(-1px);
+    }
+  }
+  .card, .triage-card, .hours-row, .contact-list li, .bring-card{transition:box-shadow .2s ease, transform .2s ease;}
+
+  /* Horarios */
+  .hours-grid{display:grid; gap:.7rem;}
+  .hours-row{
+    display:flex; justify-content:space-between; align-items:center; gap:.8rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:.8rem 1rem;
+  }
+  .hours-row .tag{
+    font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+    padding:.2rem .5rem; border-radius:6px; flex-shrink:0;
+  }
+  .tag-open{background:#E5F4EA; color:#1F6B3C;}
+  .tag-info{background:var(--primary-tint); color:var(--primary-dark);}
+
+  /* Mini-infografía de triage */
+  .mini-flow{display:flex; flex-direction:column; align-items:center; gap:.25rem; margin-bottom:1.2rem;}
+  .mini-step{
+    display:block; width:100%; max-width:300px; text-align:center;
+    font-weight:600; font-size:.85rem; padding:.55rem .8rem; border-radius:8px;
+    background:var(--primary-tint); color:var(--primary-dark);
+  }
+  .mini-arrow{color:var(--ink-soft); font-size:.95rem; line-height:1;}
+  .mini-c1{background:#FDEAEA; color:#8C1116;}
+  .mini-c2{background:#FDEEE3; color:#8A4209;}
+  .mini-c3{background:#FBF3D9; color:#6B5300;}
+  .mini-c4{background:#E7F5EC; color:#1F6B3C;}
+  .mini-c5{background:#E8F1FB; color:#1B4E8C;}
+
+  /* Triage cards */
+  .triage-card{
+    position:relative; overflow:hidden;
+    display:flex; gap:.9rem; align-items:flex-start;
+    border-radius:var(--radius); padding:1rem 1.1rem 1rem 1.2rem;
+    margin-bottom:.8rem; border:1px solid var(--line); border-left-width:7px;
+  }
+  .triage-card .code{
+    font-family:'Fraunces',serif; font-weight:700; font-size:2.1rem;
+    line-height:1; flex-shrink:0; width:3.1rem; text-align:center;
+  }
+  .triage-card .body h3{font-size:1rem; margin-bottom:.15rem;}
+  .triage-card .meta{font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; margin-bottom:.35rem;}
+  .triage-card .examples{font-size:.86rem; color:var(--ink-soft); margin:0;}
+  .triage-card.c1{border-left-color:#D7263D; background:#FDEAEA;}
+  .triage-card.c1 .code, .triage-card.c1 .meta{color:#8C1116;}
+  .triage-card.c2{border-left-color:#E8732A; background:#FDEEE3;}
+  .triage-card.c2 .code, .triage-card.c2 .meta{color:#8A4209;}
+  .triage-card.c3{border-left-color:#E8B92E; background:#FBF3D9;}
+  .triage-card.c3 .code, .triage-card.c3 .meta{color:#6B5300;}
+  .triage-card.c4{border-left-color:#3FA86B; background:#E7F5EC;}
+  .triage-card.c4 .code, .triage-card.c4 .meta{color:#1F6B3C;}
+  .triage-card.c5{border-left-color:#4F8FD1; background:#E8F1FB;}
+  .triage-card.c5 .code, .triage-card.c5 .meta{color:#1B4E8C;}
+
+  .note{
+    font-size:.85rem; color:var(--ink-soft); background:var(--primary-tint);
+    border-radius:10px; padding:.75rem .9rem; margin-top:.4rem;
+  }
+  .note.warn{background:var(--accent-tint); color:#5A3D0E;}
+
+  /* Flujo de atención (timeline) */
+  .flow-list{list-style:none; margin:0; padding:0;}
+  .flow-list li{display:flex; gap:.9rem; align-items:flex-start; padding:.5rem 0 1.15rem; position:relative;}
+  .flow-list li:not(:last-child)::before{
+    content:""; position:absolute; left:1.1rem; top:2.5rem; bottom:-.1rem; width:2px; background:var(--line);
+  }
+  .flow-ico{
+    width:2.2rem; height:2.2rem; flex-shrink:0; border-radius:50%;
+    background:var(--primary-tint); color:var(--primary-dark);
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; z-index:1;
+  }
+  .flow-list strong{font-size:.95rem;}
+  .flow-list p{margin:.15rem 0 0; font-size:.86rem; color:var(--ink-soft);}
+
+  /* Qué traer */
+  .bring-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem;}
+  .bring-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:.95rem .8rem; text-align:center;}
+  .bring-card h3{font-size:.85rem; margin:.35rem 0 .25rem;}
+  .bring-card p{font-size:.76rem; color:var(--ink-soft); margin:0;}
+  .bring-ico{font-size:1.6rem; display:block;}
+
+  /* Cuándo consultar - dos columnas */
+  .compare{display:grid; gap:.8rem;}
+  .compare .card h3{font-size:1rem; display:flex; align-items:center; gap:.4rem;}
+  .compare ul{margin:.4rem 0 0; padding-left:1.1rem; font-size:.92rem; color:var(--ink-soft);}
+  .compare li{margin-bottom:.3rem;}
+
+  /* Señales de alarma y FAQ (acordeones) */
+  details{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:.2rem .9rem; margin-bottom:.6rem;
+  }
+  summary{
+    cursor:pointer; list-style:none; padding:.85rem 1.8rem .85rem 0;
+    font-weight:600; font-size:.96rem; position:relative;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"⌄"; position:absolute; right:0; top:.7rem;
+    font-size:1.2rem; color:var(--primary); font-weight:700;
+    transition:transform .2s ease; display:inline-block;
+  }
+  details[open] summary::after{transform:rotate(180deg);}
+  details p, details ul{font-size:.91rem; color:var(--ink-soft); padding-bottom:.8rem; margin:0;}
+  details ul{padding-left:1.1rem;}
+  details.alarm{border-left:4px solid var(--danger);}
+  details.alarm summary{color:#6E1813;}
+
+  /* Orientador interactivo */
+  .orientador-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem;}
+  .ori-checks{display:grid; gap:.6rem; border:0; padding:0; margin:0 0 1rem;}
+  .ori-checks label{
+    display:flex; align-items:flex-start; gap:.6rem; font-size:.92rem;
+    background:var(--bg); border:1px solid var(--line); border-radius:10px;
+    padding:.7rem .8rem; cursor:pointer;
+  }
+  .ori-checks input{margin-top:.2rem; width:1.15rem; height:1.15rem; flex-shrink:0;}
+  .ori-actions{display:flex; gap:.6rem; margin-top:.8rem; flex-wrap:wrap;}
+  .ori-result-card{border-radius:var(--radius); padding:1.1rem; border:1px solid var(--line); margin-bottom:.9rem;}
+  .ori-result-card h3{margin-bottom:.5rem;}
+  .ori-result-card .ori-disclaimer{font-size:.8rem; color:var(--ink-soft); margin:.7rem 0 0; border-top:1px solid var(--line); padding-top:.6rem;}
+  .ori-urgencia{background:#FDEAEA; border-color:#D7263D;}
+  .ori-sapu{background:#FDEEE3; border-color:#E8732A;}
+  .ori-cesfam{background:#E7F5EC; border-color:#3FA86B;}
+  .ori-programada{background:#E8F1FB; border-color:#4F8FD1;}
+
+  /* Contacto */
+  .contact-list{list-style:none; margin:0 0 1rem; padding:0; display:grid; gap:.6rem;}
+  .contact-list li{
+    display:flex; gap:.7rem; align-items:flex-start;
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:.8rem 1rem; font-size:.93rem;
+  }
+  .contact-list .ico{font-size:1.1rem; line-height:1.4;}
+  .map-frame{
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-bottom:.6rem;
+  }
+  .map-frame iframe{width:100%; height:240px; border:0; display:block;}
+
+  footer{
+    border-top:1px solid var(--line); margin-top:1rem;
+    padding:1.5rem 1rem 2.5rem; font-size:.8rem; color:var(--ink-soft);
+    max-width:var(--maxw); margin-left:auto; margin-right:auto;
+  }
+  footer a{color:var(--ink-soft);}
+  footer .sources{margin:.6rem 0 0; padding-left:1.1rem;}
+  footer .sources li{margin-bottom:.2rem;}
+
+  @media (min-width:700px){
+    :root{font-size:18px;}
+    .hero h1{font-size:2.3rem;}
+    .compare{grid-template-columns:1fr 1fr;}
+    .bring-grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  /* ---------- Modo de alto contraste ---------- */
+  html.hc{
+    --bg:#000000;
+    --surface:#000000;
+    --ink:#FFFFFF;
+    --ink-soft:#F2F2F2;
+    --primary:#FFD400;
+    --primary-dark:#000000;
+    --primary-tint:#1A1A1A;
+    --accent:#FFD400;
+    --accent-tint:#1A1A1A;
+    --danger:#FF6B6B;
+    --danger-tint:#1A1A1A;
+    --line:#FFFFFF;
+  }
+  html.hc body{background:#000;}
+  html.hc a{color:#FFD400; text-decoration:underline;}
+  html.hc .eyebrow,
+  html.hc .chipnav a,
+  html.hc .tag-open,
+  html.hc .tag-info,
+  html.hc .mini-step,
+  html.hc .flow-ico,
+  html.hc .note.warn,
+  html.hc .btn-secondary{
+    background:#000 !important; color:#FFD400 !important; border:1px solid #fff !important;
+  }
+  html.hc .mini-c1, html.hc .mini-c2, html.hc .mini-c3, html.hc .mini-c4, html.hc .mini-c5,
+  html.hc .triage-card, html.hc .ori-result-card{
+    background:#000 !important; color:#fff !important; border:1px solid #fff !important;
+  }
+  html.hc .triage-card .code, html.hc .triage-card .meta, html.hc .triage-card .examples, html.hc .triage-card h3{
+    color:#fff !important;
+  }
+  html.hc .call-btn, html.hc .btn-primary{color:#000 !important;}
+  html.hc .alert{color:#fff;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header>
+  <div class="a11y-bar" role="region" aria-label="Opciones de accesibilidad">
+    <span class="a11y-label">Texto</span>
+    <button type="button" id="a11y-dec" aria-label="Disminuir tamaño del texto">A−</button>
+    <button type="button" id="a11y-inc" aria-label="Aumentar tamaño del texto">A+</button>
+    <button type="button" id="a11y-contrast" aria-pressed="false">◐ Alto contraste</button>
+  </div>
+
+  <div class="topbar">
+    <div class="brand">Urgencia<small>Hospital de Frutillar</small></div>
+    <a class="call-btn" href="tel:+56652326900" aria-label="Llamar a Urgencia Hospital de Frutillar">📞 Llamar</a>
+  </div>
+
+  <nav class="chipnav" aria-label="Navegación de secciones">
+    <ul>
+      <li><a href="#horarios">Horarios</a></li>
+      <li><a href="#categorizacion">Categorización</a></li>
+      <li><a href="#tiempos-espera">Tiempos de espera</a></li>
+      <li><a href="#que-esperar">Qué esperar</a></li>
+      <li><a href="#que-traer">Qué traer</a></li>
+      <li><a href="#cuando-consultar">¿Dónde consultar?</a></li>
+      <li><a href="#senales-alarma">Señales de alarma</a></li>
+      <li><a href="#grupos-especiales">Embarazo y niños</a></li>
+      <li><a href="#orientador">Orientador</a></li>
+      <li><a href="#faq">Preguntas frecuentes</a></li>
+      <li><a href="#contacto">Ubicación y contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <div class="hero">
+    <span class="eyebrow">Servicio de Salud del Reloncaví</span>
+    <h1>Infórmate antes de tu visita</h1>
+    <p class="subtitle">Atención las 24 horas, todos los días del año. Esta página entrega información general para orientar tu consulta.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:+56652326900">📞 Llamar a Urgencia</a>
+      <a class="btn btn-secondary" href="#contacto">📍 Cómo llegar</a>
+    </div>
+    <div class="alert">
+      <strong>¿Es una emergencia vital?</strong> (paro cardiorrespiratorio, dificultad respiratoria severa, pérdida de conciencia, sangrado masivo, trauma grave): llama al <strong>131 (SAMU)</strong> o dirígete de inmediato a Urgencia. No esperes a confirmar la información de este sitio.
+    </div>
+  </div>
+
+  <!-- HORARIOS -->
+  <section id="horarios" class="reveal">
+    <div class="section-head">
+      <h2>Horarios de atención</h2>
+      <p class="desc">El Servicio de Urgencia funciona en forma continua. Otros puntos de la red tienen horario acotado y son la vía adecuada para consultas no urgentes.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-row">
+        <div><strong>Urgencia Hospital de Frutillar</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Av. Las Piedras s/n, Frutillar Bajo</span></div>
+        <span class="tag tag-open">24 horas · todos los días</span>
+      </div>
+      <div class="hours-row">
+        <div><strong>SAPU Frutillar</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Lun a Vie 17:00–24:00 hrs · Sáb, Dom y feriados 09:00–24:00 hrs</span></div>
+        <span class="tag tag-info">Horario extendido</span>
+      </div>
+      <div class="hours-row">
+        <div><strong>CESFAM Frutillar</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Cristino Winkler N.º 751 · Lun a Jue 08:00–17:00 hrs · Vie 08:00–16:00 hrs</span></div>
+        <span class="tag tag-info">Horario hábil</span>
+      </div>
+      <div class="hours-row">
+        <div><strong>CECOSF Pantanosa</strong><br><span style="color:var(--ink-soft); font-size:.88rem;">Violeta Parra s/n, Sector Pantanosa · mismo horario que CESFAM</span></div>
+        <span class="tag tag-info">Horario hábil</span>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener" style="margin-top:.9rem;">📅 Pedir hora en CESFAM / CECOSF</a>
+    <p class="note">Las horas para CESFAM Frutillar y CECOSF Pantanosa se solicitan en línea a través de HoraSalud, no en el Servicio de Urgencia.</p>
+  </section>
+
+  <!-- CATEGORIZACIÓN -->
+  <section id="categorizacion" class="reveal">
+    <div class="section-head">
+      <h2>Categorización de pacientes (triage)</h2>
+      <p class="desc">En Urgencia no se atiende por orden de llegada, sino según el riesgo clínico. Al ingresar, un profesional evalúa tu condición y te asigna una categoría de 1 a 5, conforme a la normativa MINSAL.</p>
+    </div>
+
+    <!-- Infografía del flujo de triage -->
+    <div class="mini-flow" aria-hidden="true">
+      <span class="mini-step">Ingreso</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step">Triage</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step mini-c1">C1 · Atención inmediata</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step mini-c2">C2 · Muy urgente</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step mini-c3">C3 · Urgente</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step mini-c4">C4 · Menor urgencia</span>
+      <span class="mini-arrow">↓</span>
+      <span class="mini-step mini-c5">C5 · No urgente</span>
+    </div>
+
+    <p class="note">Es normal que pacientes que llegaron después sean atendidos antes si presentan una condición más grave. La atención se realiza según gravedad, no por orden de llegada.</p>
+    <p class="note">Tu categoría de triage puede cambiar durante la espera si tu condición clínica cambia. Si notas que empeoras, avisa al personal de inmediato.</p>
+
+    <article class="triage-card c1">
+      <div class="code">C1</div>
+      <div class="body">
+        <h3>Emergencia vital</h3>
+        <div class="meta">Atención inmediata</div>
+        <p class="examples">Ej.: paro cardiorrespiratorio, compromiso de conciencia severo, infarto agudo en curso, convulsión activa, politraumatismo grave, shock de cualquier causa, insuficiencia respiratoria severa, anafilaxia con compromiso de vía aérea.</p>
+      </div>
+    </article>
+    <article class="triage-card c2">
+      <div class="code">C2</div>
+      <div class="body">
+        <h3>Emergencia</h3>
+        <div class="meta">Espera máxima referencial: 30 min</div>
+        <p class="examples">Ej.: dolor torácico, compromiso de conciencia, quemaduras en cara/cuello/genitales, sangrado profuso, abdomen agudo, sospecha de accidente cerebrovascular, dificultad respiratoria moderada a severa, fracturas expuestas, intoxicación con compromiso hemodinámico.</p>
+      </div>
+    </article>
+    <article class="triage-card c3">
+      <div class="code">C3</div>
+      <div class="body">
+        <h3>Urgencia (mediana complejidad)</h3>
+        <div class="meta">Espera máxima referencial: 90 min</div>
+        <p class="examples">Ej.: dolor moderado, fiebre alta sin signos de alarma, heridas que requieren sutura, vómitos persistentes, deshidratación leve a moderada, crisis hipertensiva sin daño de órgano, dolor abdominal sin signos de irritación peritoneal.</p>
+      </div>
+    </article>
+    <article class="triage-card c4">
+      <div class="code">C4</div>
+      <div class="body">
+        <h3>Urgencia menor</h3>
+        <div class="meta">Tiempos de espera prolongados</div>
+        <p class="examples">Ej.: cuadros respiratorios leves, curaciones simples, dolor leve, esguinces sin deformidad, conjuntivitis, cefalea leve sin signos de alarma. Se recomienda consultar en SAPU o CESFAM para una atención más oportuna.</p>
+      </div>
+    </article>
+    <article class="triage-card c5">
+      <div class="code">C5</div>
+      <div class="body">
+        <h3>Consulta de baja complejidad</h3>
+        <div class="meta">Tiempos de espera prolongados</div>
+        <p class="examples">Ej.: control de tratamiento, síntomas crónicos estables, certificados, renovación de receta, retiro de informes o resultados. Se recomienda consultar en SAPU o CESFAM, donde habitualmente se resuelve más rápido.</p>
+      </div>
+    </article>
+
+    <p class="note">Los tiempos son referenciales y pueden variar según la saturación del servicio. Los pacientes más graves siempre tienen prioridad, independiente del orden de llegada.</p>
+  </section>
+
+  <!-- TIEMPOS DE ESPERA -->
+  <section id="tiempos-espera" class="reveal">
+    <div class="section-head">
+      <h2>Tiempos de espera</h2>
+      <p class="desc">El tiempo de espera depende de tu categoría y de la cantidad de pacientes graves siendo atendidos en ese momento, no del orden de llegada.</p>
+    </div>
+    <div class="card">
+      <p style="margin-bottom:.6rem;">Mientras esperas:</p>
+      <ul style="padding-left:1.2rem; color:var(--ink-soft); font-size:.93rem;">
+        <li>Permanece en la sala de espera o avisa al personal si debes retirarte.</li>
+        <li>Si tus síntomas empeoran mientras esperas, informa de inmediato al personal de categorización.</li>
+        <li>Evita consumir alimentos o medicamentos sin indicación si estás en evaluación por dolor abdominal o estás pendiente de cirugía.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- QUÉ OCURRIRÁ DURANTE TU ATENCIÓN -->
+  <section id="que-esperar" class="reveal">
+    <div class="section-head">
+      <h2>¿Qué ocurrirá durante tu atención?</h2>
+      <p class="desc">Estos son los pasos generales. No todos los pacientes pasan por exámenes o quedan hospitalizados.</p>
+    </div>
+    <ol class="flow-list">
+      <li><span class="flow-ico" aria-hidden="true">🚪</span><div><strong>Ingreso</strong><p>Llegas al Servicio de Urgencia.</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">🗂️</span><div><strong>Admisión</strong><p>Se registran tus datos y tu previsión de salud.</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">🩺</span><div><strong>Triage</strong><p>Un profesional evalúa tu riesgo y asigna tu categoría (C1–C5).</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">👨‍⚕️</span><div><strong>Evaluación médica</strong><p>El médico revisa tu historia y te examina.</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">🔬</span><div><strong>Exámenes</strong><p>Si son necesarios: sangre, orina, imágenes u otros.</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">💉</span><div><strong>Tratamiento</strong><p>Recibes las indicaciones o procedimientos necesarios.</p></div></li>
+      <li><span class="flow-ico" aria-hidden="true">🏠</span><div><strong>Alta u hospitalización</strong><p>Vuelves a casa con indicaciones, o quedas hospitalizado si lo requieres.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- QUÉ TRAER -->
+  <section id="que-traer" class="reveal">
+    <div class="section-head">
+      <h2>Qué traer a tu atención</h2>
+      <p class="desc">Tener esto a mano ayuda a que tu evaluación sea más rápida y segura.</p>
+    </div>
+    <div class="bring-grid">
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">🪪</span><h3>Carné de identidad</h3></article>
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">💊</span><h3>Lista de medicamentos</h3><p>Los que usas habitualmente.</p></article>
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">⚠️</span><h3>Alergias</h3><p>A medicamentos u otras sustancias.</p></article>
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">🩻</span><h3>Exámenes recientes</h3><p>Laboratorio, imágenes u otros.</p></article>
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">📄</span><h3>Órdenes médicas</h3><p>Interconsultas o indicaciones.</p></article>
+      <article class="bring-card"><span class="bring-ico" aria-hidden="true">📞</span><h3>Contacto de confianza</h3><p>Nombre y teléfono de alguien.</p></article>
+    </div>
+  </section>
+
+  <!-- CUÁNDO CONSULTAR -->
+  <section id="cuando-consultar" class="reveal">
+    <div class="section-head">
+      <h2>¿Urgencia, SAPU o CESFAM?</h2>
+      <p class="desc">Usar el nivel adecuado de la red de salud reduce tu tiempo de espera y el de quienes tienen una condición más grave.</p>
+    </div>
+    <div class="compare">
+      <article class="card">
+        <h3>🔴 Ve a Urgencia si presentas</h3>
+        <ul>
+          <li>Dolor de pecho, dificultad para respirar</li>
+          <li>Pérdida de conciencia o confusión súbita</li>
+          <li>Sangrado abundante o trauma importante</li>
+          <li>Signos de accidente cerebrovascular (debilidad/asimetría facial, dificultad para hablar)</li>
+          <li>Fiebre alta con compromiso del estado general</li>
+          <li>Convulsiones</li>
+          <li>Vómitos con sangre o sangrado digestivo</li>
+          <li>Reacción alérgica severa (hinchazón de cara/garganta, dificultad para respirar)</li>
+          <li>Intoxicación o sospecha de sobredosis</li>
+          <li>Quemaduras extensas o profundas</li>
+          <li>Embarazo con sangrado o dolor intenso</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>🟢 Prefiere SAPU / CESFAM si presentas</h3>
+        <ul>
+          <li>Síntomas respiratorios o digestivos leves</li>
+          <li>Control de enfermedades crónicas estables</li>
+          <li>Renovación de recetas o certificados</li>
+          <li>Curaciones simples o dolor leve de días de evolución</li>
+          <li>Resfrío, gripe o cuadros virales leves</li>
+          <li>Dolor de garganta u otitis sin signos de alarma</li>
+          <li>Diarrea sin signos de deshidratación</li>
+          <li>Lumbago o dolores musculares leves</li>
+          <li>Control de presión arterial o glicemia</li>
+          <li>Vacunas y controles de niño sano</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SEÑALES DE ALARMA -->
+  <section id="senales-alarma" class="reveal">
+    <div class="section-head">
+      <h2>Señales de alarma</h2>
+      <p class="desc">Si presentas alguno de estos signos, no esperes: acude de inmediato a Urgencia.</p>
+    </div>
+
+    <details class="alarm">
+      <summary>Dolor torácico</summary>
+      <ul>
+        <li>Dolor opresivo, "como un peso", que dura más de unos minutos</li>
+        <li>Se acompaña de falta de aire, sudoración, náuseas o dolor irradiado a brazo, mandíbula o espalda</li>
+        <li>Aparece con el esfuerzo y se repite o empeora</li>
+        <li>Se acompaña de palpitaciones o sensación de desmayo</li>
+      </ul>
+    </details>
+
+    <details class="alarm">
+      <summary>Dolor abdominal</summary>
+      <ul>
+        <li>Dolor muy intenso, súbito o que no cede</li>
+        <li>Fiebre alta, vómitos persistentes o incapacidad de retener líquidos</li>
+        <li>Abdomen muy sensible al tacto, duro o distendido</li>
+        <li>Sangre en deposiciones, vómito u orina</li>
+        <li>Ocurre durante el embarazo</li>
+      </ul>
+    </details>
+
+    <details class="alarm">
+      <summary>Fiebre</summary>
+      <ul>
+        <li>En menores de 3 meses, cualquier fiebre (≥38 °C)</li>
+        <li>Fiebre muy alta (≥40 °C) que no responde a antipiréticos</li>
+        <li>Rigidez de cuello, confusión, manchas en la piel o dificultad para respirar</li>
+        <li>Fiebre persistente por más de 3 días</li>
+      </ul>
+    </details>
+
+    <details class="alarm">
+      <summary>Dificultad respiratoria</summary>
+      <ul>
+        <li>Falta de aire en reposo o que empeora rápidamente</li>
+        <li>Labios o uñas de color azulado o morado</li>
+        <li>Imposibilidad de hablar frases completas por falta de aire</li>
+        <li>Silbido intenso o uso evidente de los músculos del cuello y costillas para respirar</li>
+      </ul>
+    </details>
+
+    <details class="alarm">
+      <summary>Traumatismos</summary>
+      <ul>
+        <li>Golpe en la cabeza con pérdida de conciencia, vómitos, confusión o somnolencia</li>
+        <li>Deformidad evidente de un miembro o imposibilidad de moverlo o apoyarlo</li>
+        <li>Heridas profundas, sangrado que no se detiene con presión, o herida con objeto incrustado</li>
+        <li>Caída de altura o accidente de alta energía</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- GRUPOS ESPECIALES: EMBARAZO Y NIÑOS -->
+  <section id="grupos-especiales" class="reveal">
+    <div class="section-head">
+      <h2>Embarazo y niños: cuándo consultar de inmediato</h2>
+    </div>
+
+    <article class="card">
+      <h3>🤰 Embarazo</h3>
+      <p>Consulta de inmediato en Urgencia si estás embarazada y presentas:</p>
+      <ul>
+        <li>Sangrado vaginal</li>
+        <li>Pérdida de líquido (sospecha de rotura de membranas)</li>
+        <li>Disminución o ausencia de movimientos fetales</li>
+        <li>Dolor abdominal intenso o contracciones antes de tiempo</li>
+        <li>Cefalea intensa con alteraciones visuales, hinchazón súbita o presión arterial elevada</li>
+        <li>Fiebre alta</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>🧒 Niños</h3>
+      <p>Consulta de inmediato en Urgencia si tu hijo/a presenta:</p>
+      <ul>
+        <li>Dificultad respiratoria o respiración muy rápida</li>
+        <li>Convulsiones</li>
+        <li>Fiebre en menores de 3 meses</li>
+        <li>Decaimiento importante o dificultad para despertar</li>
+        <li>Rechazo alimentario o vómitos persistentes que impiden hidratarse</li>
+        <li>Coloración azulada de labios o piel</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ORIENTADOR INTERACTIVO -->
+  <section id="orientador" class="reveal">
+    <div class="section-head">
+      <h2>¿Dónde debería consultar?</h2>
+      <p class="desc">Responde estas preguntas para orientarte. Esta herramienta no diagnostica enfermedades: solo ayuda a elegir el nivel de atención adecuado.</p>
+    </div>
+
+    <div class="orientador-box" id="orientador-box" aria-live="polite">
+
+      <div class="orientador-step" id="ori-step-1">
+        <h3 tabindex="-1">Marca si presentas alguno de estos síntomas ahora</h3>
+        <fieldset class="ori-checks">
+          <legend class="sr-only">Señales de alarma</legend>
+          <label><input type="checkbox" name="alarma" value="dolor-pecho"> Dolor de pecho o dificultad para respirar</label>
+          <label><input type="checkbox" name="alarma" value="conciencia"> Pérdida de conciencia o confusión súbita</label>
+          <label><input type="checkbox" name="alarma" value="sangrado"> Sangrado abundante que no se detiene</label>
+          <label><input type="checkbox" name="alarma" value="acv"> Boca torcida, debilidad de un lado del cuerpo o dificultad repentina para hablar</label>
+          <label><input type="checkbox" name="alarma" value="embarazo"> Embarazo con sangrado, pérdida de líquido o disminución de movimientos fetales</label>
+          <label><input type="checkbox" name="alarma" value="lactante"> Lactante menor de 3 meses con fiebre, o niño/a con dificultad respiratoria, convulsiones o decaimiento importante</label>
+          <label><input type="checkbox" name="alarma" value="trauma"> Traumatismo importante (accidente, caída de altura, golpe fuerte en la cabeza)</label>
+        </fieldset>
+        <button type="button" class="btn btn-primary" id="ori-continue-1">Continuar</button>
+      </div>
+
+      <div class="orientador-step" id="ori-step-2" hidden>
+        <h3 tabindex="-1">¿Tus síntomas comenzaron hace poco (últimas 24–48 horas) y te preocupan, aunque no sean graves?</h3>
+        <div class="ori-actions">
+          <button type="button" class="btn btn-secondary ori-answer" data-q="2" data-a="si">Sí</button>
+          <button type="button" class="btn btn-secondary ori-answer" data-q="2" data-a="no">No</button>
+        </div>
+      </div>
+
+      <div class="orientador-step" id="ori-step-3" hidden>
+        <h3 tabindex="-1">¿Necesitas un control de un problema de salud que ya conoces, una receta, un certificado o una vacuna?</h3>
+        <div class="ori-actions">
+          <button type="button" class="btn btn-secondary ori-answer" data-q="3" data-a="si">Sí</button>
+          <button type="button" class="btn btn-secondary ori-answer" data-q="3" data-a="no">No</button>
+        </div>
+      </div>
+
+      <div class="orientador-result" id="ori-result" hidden>
+        <div class="ori-result-card" id="ori-result-card" tabindex="-1"></div>
+        <button type="button" class="btn btn-secondary" id="ori-restart">Volver a empezar</button>
+      </div>
+
+    </div>
+    <p class="note" style="margin-top:1rem;">⚠️ Esta herramienta es orientativa y no reemplaza la evaluación de un profesional de salud. Ante cualquier duda, consulta directamente. Si es una emergencia vital, llama al 131 (SAMU).</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+
+    <details>
+      <summary>¿Por qué no me atienden en el orden en que llegué?</summary>
+      <p>Porque la atención se prioriza según el riesgo vital (categorización), no según el orden de llegada. Un paciente C2 puede pasar antes que alguien que llegó antes pero fue categorizado como C4 o C5.</p>
+    </details>
+
+    <details>
+      <summary>¿Qué debo llevar a la Urgencia?</summary>
+      <ul>
+        <li>Cédula de identidad</li>
+        <li>Carné de FONASA o tu Isapre, si corresponde</li>
+        <li>Lista de medicamentos que usas habitualmente</li>
+        <li>Información sobre alergias y enfermedades crónicas</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>¿Tiene costo la atención de Urgencia?</summary>
+      <p>Las atenciones de urgencia vital están protegidas por la Ley N.º 19.650 (Ley de Urgencia), independiente de tu sistema de salud. El costo de otras atenciones depende de tu tramo FONASA o tu Isapre.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo ir acompañado?</summary>
+      <p>Se permite 1 acompañante para pacientes menores de 19 años, personas con discapacidad o personas mayores de 60 años.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden urgencias pediátricas?</summary>
+      <p>Sí. El Servicio de Urgencia atiende a público general: adultos, niños y traumatismos.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden urgencias ginecológicas u obstétricas?</summary>
+      <p>Sí. En horario hábil (lunes a viernes de 08:00 a 17:00 hrs) la atención es realizada por matrona. Fuera de ese horario (noches, fines de semana y feriados), la atención es realizada por médico general.</p>
+    </details>
+
+    <details>
+      <summary>¿Cómo sé en qué categoría quedé?</summary>
+      <p>El profesional que realiza la categorización te informará tu prioridad al finalizar la evaluación. Si tienes dudas, puedes preguntar directamente en el counter de categorización.</p>
+    </details>
+
+    <details>
+      <summary>¿Qué hago si mis síntomas empeoran mientras espero?</summary>
+      <p>Avisa de inmediato al personal de categorización o de enfermería; puedes ser re-evaluado y reclasificado a una categoría de mayor prioridad.</p>
+    </details>
+
+    <details>
+      <summary>¿Cómo pido una hora médica en el CESFAM o el CECOSF?</summary>
+      <p>Las horas no se solicitan en el Servicio de Urgencia. Se piden en línea a través de <a href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener">HoraSalud</a>.</p>
+    </details>
+
+    <details>
+      <summary>¿Atienden los fines de semana y feriados?</summary>
+      <p>El Servicio de Urgencia del hospital atiende los 365 días del año, las 24 horas. El SAPU también atiende fines de semana y feriados (09:00–24:00 hrs); el CESFAM y el CECOSF no atienden esos días.</p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si decido retirarme antes de ser atendido?</summary>
+      <p>Debes informar al personal de categorización o admisión. Si decides retirarte sin ser evaluado o sin completar tu atención, normalmente se te pedirá firmar un documento de alta voluntaria.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo comer o beber mientras espero?</summary>
+      <p>Evítalo si presentas dolor abdominal, vómitos, o si existe posibilidad de necesitar cirugía o sedación, ya que podría retrasar tu atención. Pregunta al personal de categorización si tienes dudas.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo tomar mis medicamentos habituales mientras espero?</summary>
+      <p>En general sí, salvo indicación contraria del equipo de salud. Informa siempre qué medicamentos tomas y a qué hora los tomaste.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo retirarme y volver más tarde?</summary>
+      <p>Evítalo si es posible: podrías perder tu turno de atención. Si necesitas salir, avisa primero al personal de categorización o admisión.</p>
+    </details>
+
+    <details>
+      <summary>¿Puedo solicitar una licencia médica?</summary>
+      <p>Sí. Si tu condición lo justifica, el médico que te atiende puede emitir una licencia médica.</p>
+    </details>
+
+    <details>
+      <summary>¿Qué ocurre si necesito hospitalización?</summary>
+      <p>Si el médico determina que necesitas quedar hospitalizado, el equipo de Urgencia coordinará tu traslado a una cama disponible en el hospital o, si no hay disponibilidad, a otro establecimiento de la red.</p>
+    </details>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="reveal">
+    <div class="section-head">
+      <h2>Ubicación y contacto</h2>
+    </div>
+    <ul class="contact-list">
+      <li><span class="ico">📍</span><span>Av. Las Piedras s/n, Frutillar Bajo, Frutillar, Región de Los Lagos</span></li>
+      <li><span class="ico">📞</span><span><a href="tel:+56652326900">(65) 232 6900</a></span></li>
+      <li><span class="ico">🌐</span><span><a href="http://hospitaldefrutillar.wixsite.com/salud" target="_blank" rel="noopener">Sitio oficial del Hospital de Frutillar</a></span></li>
+      <li><span class="ico">🏥</span><span><a href="https://ssrelon.redsalud.gob.cl" target="_blank" rel="noopener">Servicio de Salud del Reloncaví</a></span></li>
+    </ul>
+    <div class="map-frame">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Hospital%20de%20Frutillar%2C%20Av.%20Las%20Piedras%2C%20Frutillar&z=15&output=embed"
+        title="Mapa de ubicación del Hospital de Frutillar"></iframe>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hospital+de+Frutillar" target="_blank" rel="noopener" style="font-size:.85rem;">Abrir en Google Maps ↗</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Aviso:</strong> esta página es informativa y no sustituye la evaluación médica presencial ni las indicaciones del personal de salud. Ante una emergencia vital, llama al 131 (SAMU) o acude directamente a Urgencia.</p>
+  <p>Hospital de Frutillar · Servicio de Salud del Reloncaví · Página administrada por el Servicio de Urgencia.</p>
+  <p style="margin-bottom:.3rem;"><strong>Fuentes:</strong></p>
+  <ul class="sources">
+    <li>Norma de categorización de pacientes en servicios de urgencia, Ministerio de Salud de Chile.</li>
+    <li>Ley N.º 19.650 (1999), conocida como Ley de Urgencia.</li>
+    <li>Información operativa proporcionada por el Servicio de Urgencia del Hospital de Frutillar, CESFAM Frutillar y CECOSF Pantanosa.</li>
+  </ul>
+  <p>Última actualización: junio 2026.</p>
+</footer>
+
+<script>
+  // Accesibilidad: tamaño de texto y alto contraste, persistidos en localStorage
+  (function(){
+    var root = document.documentElement;
+    var FONT_KEY = 'hf_font_px', HC_KEY = 'hf_high_contrast';
+    var MIN = 15, MAX = 23;
+
+    function applyFont(px){ root.style.fontSize = px + 'px'; }
+    function currentPx(){ return parseFloat(getComputedStyle(root).fontSize) || 17; }
+
+    try{
+      var savedFont = localStorage.getItem(FONT_KEY);
+      if(savedFont) applyFont(parseFloat(savedFont));
+      if(localStorage.getItem(HC_KEY) === '1'){
+        root.classList.add('hc');
+        document.getElementById('a11y-contrast').setAttribute('aria-pressed', 'true');
+      }
+    }catch(e){}
+
+    document.getElementById('a11y-inc').addEventListener('click', function(){
+      var px = Math.min(MAX, currentPx() + 1);
+      applyFont(px);
+      try{ localStorage.setItem(FONT_KEY, px); }catch(e){}
+    });
+    document.getElementById('a11y-dec').addEventListener('click', function(){
+      var px = Math.max(MIN, currentPx() - 1);
+      applyFont(px);
+      try{ localStorage.setItem(FONT_KEY, px); }catch(e){}
+    });
+    document.getElementById('a11y-contrast').addEventListener('click', function(){
+      var on = root.classList.toggle('hc');
+      this.setAttribute('aria-pressed', on ? 'true' : 'false');
+      try{ localStorage.setItem(HC_KEY, on ? '1' : '0'); }catch(e){}
+    });
+  })();
+
+  // Animación de aparición al hacer scroll (respeta prefers-reduced-motion)
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduced || !('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    items.forEach(function(el){ observer.observe(el); });
+  })();
+
+  // Orientador interactivo "¿Dónde debería consultar?"
+  (function(){
+    var box = document.getElementById('orientador-box');
+    if(!box) return;
+    var step1 = document.getElementById('ori-step-1');
+    var step2 = document.getElementById('ori-step-2');
+    var step3 = document.getElementById('ori-step-3');
+    var result = document.getElementById('ori-result');
+    var resultCard = document.getElementById('ori-result-card');
+
+    var DISCLAIMER = 'Esta herramienta es orientativa y no reemplaza la evaluación de un profesional de salud. Ante cualquier duda, consulta directamente. Si es una emergencia vital, llama al 131 (SAMU).';
+
+    function focusHeading(step){
+      var h = step.querySelector('h3');
+      if(h){ h.focus(); }
+    }
+
+    function showResult(level, title, html){
+      [step1, step2, step3].forEach(function(s){ s.hidden = true; });
+      resultCard.className = 'ori-result-card ori-' + level;
+      resultCard.innerHTML = '<h3>' + title + '</h3>' + html + '<p class="ori-disclaimer">' + DISCLAIMER + '</p>';
+      result.hidden = false;
+      resultCard.focus();
+    }
+
+    document.getElementById('ori-continue-1').addEventListener('click', function(){
+      var checked = box.querySelectorAll('input[name="alarma"]:checked');
+      if(checked.length > 0){
+        showResult('urgencia', '🔴 Ve a Urgencia ahora',
+          '<p>Por los síntomas que marcaste, debes consultar de inmediato en el Servicio de Urgencia del Hospital de Frutillar.</p>' +
+          '<a class="btn btn-primary" href="tel:+56652326900">📞 Llamar a Urgencia</a>');
+        return;
+      }
+      step1.hidden = true;
+      step2.hidden = false;
+      focusHeading(step2);
+    });
+
+    box.addEventListener('click', function(e){
+      var btn = e.target.closest('.ori-answer');
+      if(!btn) return;
+      var q = btn.getAttribute('data-q');
+      var a = btn.getAttribute('data-a');
+
+      if(q === '2'){
+        if(a === 'si'){
+          showResult('sapu', '🟠 Consulta en SAPU / SAR',
+            '<p>Para síntomas recientes que te preocupan pero no son una emergencia, el SAPU es la vía más rápida hoy mismo.</p>' +
+            '<p><strong>SAPU Frutillar:</strong> Lun a Vie 17:00–24:00 hrs · Sáb, Dom y feriados 09:00–24:00 hrs.</p>');
+        }else{
+          step2.hidden = true;
+          step3.hidden = false;
+          focusHeading(step3);
+        }
+      }
+
+      if(q === '3'){
+        if(a === 'si'){
+          showResult('cesfam', '🟢 Consulta en tu CESFAM o CECOSF',
+            '<p>Para controles, recetas, certificados o vacunas, el CESFAM o el CECOSF son la vía adecuada.</p>' +
+            '<a class="btn btn-primary" href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener">📅 Pedir hora</a>');
+        }else{
+          showResult('programada', '🔵 Agenda una atención programada',
+            '<p>Tu consulta parece ser de seguimiento o no urgente. Te recomendamos agendar hora con tu médico tratante, especialista o en tu CESFAM.</p>' +
+            '<a class="btn btn-primary" href="https://horasalud.cl/web/portal/" target="_blank" rel="noopener">📅 Pedir hora</a>');
+        }
+      }
+    });
+
+    document.getElementById('ori-restart').addEventListener('click', function(){
+      box.querySelectorAll('input[name="alarma"]:checked').forEach(function(cb){ cb.checked = false; });
+      result.hidden = true;
+      step3.hidden = true;
+      step2.hidden = true;
+      step1.hidden = false;
+      focusHeading(step1);
+    });
+  })();
+</script>
+
+</body>
+</html>
