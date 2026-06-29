@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Urgencia · Hospital de Frutillar</title>
+<meta name="description" content="Portal informativo del Servicio de Urgencia del Hospital de Frutillar: dónde consultar, tiempos de espera, triage y preguntas frecuentes.">
+<meta name="theme-color" content="#0F6E7A">
+<link rel="canonical" href="https://urgenciasapp.github.io/urgencias/index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Urgencia Hospital de Frutillar">
+<meta property="og:title" content="Urgencia · Hospital de Frutillar">
+<meta property="og:description" content="Portal informativo del Servicio de Urgencia del Hospital de Frutillar: dónde consultar, tiempos de espera, triage y preguntas frecuentes.">
+<meta property="og:url" content="https://urgenciasapp.github.io/urgencias/index.html">
+<meta property="og:locale" content="es_CL">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Urgencia · Hospital de Frutillar">
+<meta name="twitter:description" content="Portal informativo del Servicio de Urgencia del Hospital de Frutillar.">
+
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- Fuentes: carga asíncrona para no bloquear el renderizado -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Datos estructurados (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hospital",
+  "name": "Hospital de Frutillar",
+  "url": "https://urgenciasapp.github.io/urgencias/index.html",
+  "telephone": "+56652326900",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Las Piedras s/n",
+    "addressLocality": "Frutillar",
+    "addressRegion": "Los Lagos",
+    "addressCountry": "CL"
+  },
+  "department": {
+    "@type": "MedicalClinic",
+    "name": "Servicio de Urgencia",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- Enlace de salto para usuarios de teclado / lectores de pantalla -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ====== ENCABEZADO COMPARTIDO (igual en todas las páginas) ====== -->
+<header>
+  <div class="a11y-bar" role="region" aria-label="Opciones de accesibilidad">
+    <span class="a11y-label">Texto</span>
+    <button type="button" id="a11y-dec" aria-label="Disminuir tamaño del texto">A−</button>
+    <button type="button" id="a11y-inc" aria-label="Aumentar tamaño del texto">A+</button>
+    <button type="button" id="a11y-contrast" aria-pressed="false">◐ Alto contraste</button>
+  </div>
+
+  <div class="topbar">
+    <a class="brand" href="index.html">Urgencia<small>Hospital de Frutillar</small></a>
+    <a class="call-btn" href="tel:+56652326900" aria-label="Llamar a Urgencia Hospital de Frutillar">📞 Llamar</a>
+  </div>
+
+  <nav class="mainnav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <span class="nav-label">Menú</span>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="donde-consultar.html">¿Dónde consultar?</a></li>
+        <li><a href="tiempos-espera.html">Tiempos de espera</a></li>
+        <li><a href="triage.html">Triage</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Aviso de emergencia: visible en todas las páginas -->
+<div class="site-alert">
+  <div class="alert">
+    <strong>¿Es una emergencia vital?</strong> (paro cardiorrespiratorio, dificultad respiratoria severa, pérdida de conciencia, sangrado masivo, trauma grave): llama al <strong>131 (SAMU)</strong> o dirígete de inmediato a Urgencia.
+  </div>
+</div>
+
+<!-- ====== CONTENIDO PRINCIPAL DE LA PORTADA ====== -->
+<main id="contenido">
+
+  <div class="page-head reveal">
+    <span class="eyebrow">Servicio de Salud del Reloncaví</span>
+    <h1>¿En qué podemos orientarte hoy?</h1>
+    <p class="subtitle">Elige una de estas secciones para informarte antes de tu consulta.</p>
+    <div class="quick-actions">
+      <a class="btn btn-primary" href="tel:+56652326900">📞 Llamar a Urgencia</a>
+      <a class="btn btn-secondary" href="donde-consultar.html#contacto">📍 Cómo llegar</a>
+    </div>
+  </div>
+
+  <!-- Las cuatro tarjetas principales del portal -->
+  <section class="reveal section-flush" aria-label="Secciones principales">
+    <div class="portal-cards">
+      <article class="portal-card">
+        <span class="portal-ico" aria-hidden="true">🧭</span>
+        <h2>¿Dónde consultar?</h2>
+        <p>Urgencia, SAPU, CESFAM o atención programada: te ayudamos a elegir, con horarios y un orientador interactivo.</p>
+        <a class="btn btn-primary" href="donde-consultar.html">Ver más →</a>
+      </article>
+
+      <article class="portal-card">
+        <span class="portal-ico" aria-hidden="true">⏱️</span>
+        <h2>Tiempos de espera</h2>
+        <p>Por qué la atención no es por orden de llegada y qué ocurre durante tu visita.</p>
+        <a class="btn btn-primary" href="tiempos-espera.html">Ver más →</a>
+      </article>
+
+      <article class="portal-card">
+        <span class="portal-ico" aria-hidden="true">🩺</span>
+        <h2>¿Qué es el Triage?</h2>
+        <p>Cómo se prioriza a los pacientes según su gravedad, de C1 a C5.</p>
+        <a class="btn btn-primary" href="triage.html">Ver más →</a>
+      </article>
+
+      <article class="portal-card">
+        <span class="portal-ico" aria-hidden="true">❓</span>
+        <h2>Preguntas frecuentes</h2>
+        <p>Respuestas a las dudas más comunes sobre tu atención.</p>
+        <a class="btn btn-primary" href="faq.html">Ver más →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Propósito del sitio y enlaces a contenido complementario -->
+  <section class="about-site reveal">
+    <h2>Sobre este sitio</h2>
+    <p>Este portal entrega información general sobre el funcionamiento del Servicio de Urgencia del Hospital de Frutillar: horarios, categorización de pacientes, tiempos de espera y preguntas frecuentes. No reemplaza la evaluación médica presencial ni las indicaciones del personal de salud.</p>
+    <p class="more-links">También puedes revisar: <a href="prepararse.html">cómo prepararte para tu visita</a>, <a href="embarazo.html">embarazo</a> o <a href="pediatria.html">niños</a>: cuándo consultar de inmediato.</p>
+  </section>
+
+</main>
+
+<!-- ====== PIE DE PÁGINA COMPARTIDO (igual en todas las páginas) ====== -->
+<footer>
+  <ul class="footer-nav">
+    <li><a href="prepararse.html">Cómo prepararte</a></li>
+    <li><a href="embarazo.html">Embarazo</a></li>
+    <li><a href="pediatria.html">Niños</a></li>
+  </ul>
+  <p><strong>Aviso:</strong> esta página es informativa y no sustituye la evaluación médica presencial ni las indicaciones del personal de salud. Ante una emergencia vital, llama al 131 (SAMU) o acude directamente a Urgencia.</p>
+  <p>Hospital de Frutillar · Servicio de Salud del Reloncaví · Página administrada por el Servicio de Urgencia.</p>
+  <p style="margin-bottom:.3rem;"><strong>Fuentes:</strong></p>
+  <ul class="sources">
+    <li>Norma de categorización de pacientes en servicios de urgencia, Ministerio de Salud de Chile.</li>
+    <li>Ley N.º 19.650 (1999), conocida como Ley de Urgencia.</li>
+    <li>Información operativa proporcionada por el Servicio de Urgencia del Hospital de Frutillar, CESFAM Frutillar y CECOSF Pantanosa.</li>
+  </ul>
+  <p>Última actualización: junio 2026.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

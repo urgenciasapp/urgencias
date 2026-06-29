@@ -1,0 +1,408 @@
+/* =====================================================================
+   Urgencia · Hospital de Frutillar — styles.css
+   Hoja de estilos única, compartida por todas las páginas del sitio.
+   Sin frameworks. Variables CSS para theming y modo de alto contraste.
+   ===================================================================== */
+
+/* ---------- Variables y reset base ---------- */
+:root{
+  --bg:#F7F7F3;
+  --surface:#FFFFFF;
+  --ink:#16282B;
+  --ink-soft:#48595C;
+  --primary:#0F6E7A;
+  --primary-dark:#0A4E57;
+  --primary-tint:#E3F1F1;
+  --accent:#C9842E;
+  --accent-tint:#F8EBD8;
+  --danger:#B3261E;
+  --danger-tint:#FBEAE8;
+  --line:#E1E0D9;
+  --radius:14px;
+  --maxw:720px;
+  font-size:17px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important; transition:none !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  line-height:1.15;
+  margin:0 0 .5rem;
+  color:var(--ink);
+}
+p{margin:0 0 1rem;}
+a{color:var(--primary-dark);}
+ul{margin:0; padding:0;}
+img{max-width:100%; display:block;}
+
+/* ---------- Accesibilidad: utilitarios y foco ---------- */
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--ink); color:#fff; padding:.6rem 1rem; z-index:200;
+}
+.skip-link:focus{left:.5rem; top:.5rem;}
+*:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px;}
+
+/* ---------- Barra de accesibilidad (tamaño de texto / contraste) ---------- */
+.a11y-bar{
+  display:flex; align-items:center; gap:.5rem; justify-content:flex-end;
+  background:#0A2326; color:#fff; padding:.45rem .9rem; font-size:.78rem;
+}
+.a11y-bar .a11y-label{opacity:.75; margin-right:.1rem;}
+.a11y-bar button{
+  background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.35);
+  border-radius:6px; padding:.35rem .6rem; font-size:.78rem; font-weight:600; cursor:pointer;
+  min-height:34px;
+}
+.a11y-bar button[aria-pressed="true"]{background:var(--accent); color:#1A1203; border-color:var(--accent);}
+
+/* ---------- Barra superior (marca + botón de llamada) ---------- */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:var(--primary-dark);
+  color:#fff;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem 1.1rem;
+  gap:.75rem;
+}
+.topbar .brand{
+  font-family:'Fraunces',serif; font-weight:600; font-size:1.45rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  color:#fff; text-decoration:none; display:block;
+}
+.topbar .brand small{display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:.85rem; opacity:.85; letter-spacing:.02em; margin-top:.1rem;}
+.call-btn{
+  display:inline-flex; align-items:center; gap:.4rem;
+  background:var(--accent); color:#1A1203;
+  font-weight:700; font-size:.95rem;
+  padding:.7rem 1.1rem; border-radius:999px;
+  text-decoration:none; white-space:nowrap;
+  min-height:46px; flex-shrink:0;
+}
+.call-btn:active{transform:scale(.97);}
+
+/* ---------- Navegación principal (con menú hamburguesa) ---------- */
+.mainnav{
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:84px; z-index:90;
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:.5rem 1rem;
+  display:flex; align-items:center; justify-content:space-between;
+  position:relative;
+}
+.nav-toggle{
+  display:flex; flex-direction:column; gap:4px; justify-content:center; align-items:center;
+  width:40px; height:40px; background:none; border:1px solid var(--line); border-radius:8px; cursor:pointer;
+}
+.nav-toggle-bar{width:20px; height:2px; background:var(--ink); border-radius:2px;}
+.nav-label{font-size:.85rem; font-weight:600; color:var(--ink-soft);}
+.nav-menu{
+  list-style:none; margin:0; padding:0;
+  display:none; flex-direction:column; gap:.4rem;
+  position:absolute; left:0; right:0; top:100%;
+  background:var(--surface); border-bottom:1px solid var(--line);
+  padding:.6rem 1rem 1rem; box-shadow:0 8px 16px rgba(0,0,0,.06);
+}
+.nav-menu.open{display:flex;}
+.nav-menu a{
+  display:block; padding:.65rem .8rem; border-radius:8px;
+  background:var(--primary-tint); color:var(--primary-dark);
+  font-weight:600; font-size:.92rem; text-decoration:none;
+}
+.nav-menu a.active{background:var(--primary); color:#fff;}
+
+/* ---------- Aviso de emergencia (presente en todas las páginas) ---------- */
+.site-alert{max-width:var(--maxw); margin:0 auto; padding:1rem 1rem 0;}
+.alert{
+  background:var(--danger-tint); border:1px solid #EFC9C5;
+  border-left:5px solid var(--danger);
+  border-radius:10px; padding:.9rem 1rem; font-size:.92rem;
+  color:#6E1813;
+}
+.alert strong{color:var(--danger);}
+
+/* ---------- Contenedor principal ---------- */
+main{max-width:var(--maxw); margin:0 auto; padding:0 1rem;}
+
+/* ---------- Encabezado de página (eyebrow + h1 + subtítulo) ---------- */
+.page-head{padding:1.6rem 0 .9rem;}
+.eyebrow{
+  display:inline-block; font-size:.74rem; font-weight:700;
+  letter-spacing:.06em; text-transform:uppercase;
+  color:var(--primary-dark); background:var(--primary-tint);
+  padding:.25rem .6rem; border-radius:999px; margin-bottom:.7rem;
+}
+.page-head h1{font-size:1.75rem;}
+.page-head .subtitle{color:var(--ink-soft); font-size:1.02rem; margin-bottom:.9rem;}
+.quick-actions{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.1rem;}
+.btn{
+  display:inline-flex; align-items:center; gap:.4rem;
+  min-height:46px; padding:.7rem 1.1rem; border-radius:10px;
+  font-weight:600; font-size:.92rem; text-decoration:none;
+  border:1px solid transparent; cursor:pointer; font-family:'Inter',sans-serif;
+}
+.btn-primary{background:var(--primary); color:#fff;}
+.btn-secondary{background:var(--surface); color:var(--primary-dark); border:1px solid var(--line);}
+.back-home{margin:.3rem 0 1.3rem;}
+
+/* ---------- Secciones y tarjetas genéricas ---------- */
+section{padding:1.6rem 0; border-top:1px solid var(--line); scroll-margin-top:132px;}
+section:first-of-type{border-top:none;}
+.section-head{margin-bottom:1rem;}
+.section-head h2{font-size:1.35rem;}
+.section-head .desc{color:var(--ink-soft); font-size:.93rem; margin:0;}
+.section-flush{border-top:none; padding-top:0;}
+
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1rem 1.1rem; margin-bottom:.8rem;
+}
+.card ul{margin:.4rem 0 0; padding-left:1.1rem; font-size:.9rem; color:var(--ink-soft);}
+.card li{margin-bottom:.3rem;}
+
+/* Animación de aparición al hacer scroll */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+.reveal.is-visible{opacity:1; transform:none;}
+
+/* Hover sutil solo en dispositivos con puntero real (evita estados "pegados" en touch) */
+@media (hover:hover){
+  .card:hover, .triage-card:hover, .hours-row:hover, .contact-list li:hover, .bring-card:hover, .portal-card:hover{
+    box-shadow:0 6px 16px rgba(0,0,0,.08); transform:translateY(-1px);
+  }
+}
+.card, .triage-card, .hours-row, .contact-list li, .bring-card, .portal-card{transition:box-shadow .2s ease, transform .2s ease;}
+
+/* ---------- Tarjetas de la portada (index.html) ---------- */
+.portal-cards{display:grid; grid-template-columns:1fr; gap:1rem; margin:1.2rem 0;}
+.portal-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:1.3rem 1.2rem; display:flex; flex-direction:column; gap:.4rem;
+}
+.portal-card .portal-ico{font-size:2rem;}
+.portal-card h2{font-size:1.1rem; margin:0;}
+.portal-card p{font-size:.9rem; color:var(--ink-soft); margin:0 0 .3rem; flex-grow:1;}
+.portal-card .btn{align-self:flex-start;}
+.about-site{font-size:.95rem;}
+.about-site .more-links{font-size:.88rem;}
+
+/* ---------- Horarios ---------- */
+.hours-grid{display:grid; gap:.7rem;}
+.hours-row{
+  display:flex; justify-content:space-between; align-items:center; gap:.8rem;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:.8rem 1rem;
+}
+.hours-row .tag{
+  font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+  padding:.2rem .5rem; border-radius:6px; flex-shrink:0;
+}
+.tag-open{background:#E5F4EA; color:#1F6B3C;}
+.tag-info{background:var(--primary-tint); color:var(--primary-dark);}
+
+/* ---------- Mini-infografía de triage ---------- */
+.mini-flow{display:flex; flex-direction:column; align-items:center; gap:.25rem; margin-bottom:1.2rem;}
+.mini-step{
+  display:block; width:100%; max-width:300px; text-align:center;
+  font-weight:600; font-size:.85rem; padding:.55rem .8rem; border-radius:8px;
+  background:var(--primary-tint); color:var(--primary-dark);
+}
+.mini-arrow{color:var(--ink-soft); font-size:.95rem; line-height:1;}
+.mini-c1{background:#FDEAEA; color:#8C1116;}
+.mini-c2{background:#FDEEE3; color:#8A4209;}
+.mini-c3{background:#FBF3D9; color:#6B5300;}
+.mini-c4{background:#E7F5EC; color:#1F6B3C;}
+.mini-c5{background:#E8F1FB; color:#1B4E8C;}
+
+/* ---------- Tarjetas de categorización (triage) ---------- */
+.triage-card{
+  position:relative; overflow:hidden;
+  display:flex; gap:.9rem; align-items:flex-start;
+  border-radius:var(--radius); padding:1rem 1.1rem 1rem 1.2rem;
+  margin-bottom:.8rem; border:1px solid var(--line); border-left-width:7px;
+}
+.triage-card .code{
+  font-family:'Fraunces',serif; font-weight:700; font-size:2.1rem;
+  line-height:1; flex-shrink:0; width:3.1rem; text-align:center;
+}
+.triage-card .body h3{font-size:1rem; margin-bottom:.15rem;}
+.triage-card .meta{font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; margin-bottom:.35rem;}
+.triage-card .examples{font-size:.86rem; color:var(--ink-soft); margin:0;}
+.triage-card.c1{border-left-color:#D7263D; background:#FDEAEA;}
+.triage-card.c1 .code, .triage-card.c1 .meta{color:#8C1116;}
+.triage-card.c2{border-left-color:#E8732A; background:#FDEEE3;}
+.triage-card.c2 .code, .triage-card.c2 .meta{color:#8A4209;}
+.triage-card.c3{border-left-color:#E8B92E; background:#FBF3D9;}
+.triage-card.c3 .code, .triage-card.c3 .meta{color:#6B5300;}
+.triage-card.c4{border-left-color:#3FA86B; background:#E7F5EC;}
+.triage-card.c4 .code, .triage-card.c4 .meta{color:#1F6B3C;}
+.triage-card.c5{border-left-color:#4F8FD1; background:#E8F1FB;}
+.triage-card.c5 .code, .triage-card.c5 .meta{color:#1B4E8C;}
+
+.note{
+  font-size:.85rem; color:var(--ink-soft); background:var(--primary-tint);
+  border-radius:10px; padding:.75rem .9rem; margin-top:.4rem;
+}
+.note.warn{background:var(--accent-tint); color:#5A3D0E;}
+
+/* ---------- Flujo de atención (línea de tiempo) ---------- */
+.flow-list{list-style:none; margin:0; padding:0;}
+.flow-list li{display:flex; gap:.9rem; align-items:flex-start; padding:.5rem 0 1.15rem; position:relative;}
+.flow-list li:not(:last-child)::before{
+  content:""; position:absolute; left:1.1rem; top:2.5rem; bottom:-.1rem; width:2px; background:var(--line);
+}
+.flow-ico{
+  width:2.2rem; height:2.2rem; flex-shrink:0; border-radius:50%;
+  background:var(--primary-tint); color:var(--primary-dark);
+  display:flex; align-items:center; justify-content:center; font-size:1.1rem; z-index:1;
+}
+.flow-list strong{font-size:.95rem;}
+.flow-list p{margin:.15rem 0 0; font-size:.86rem; color:var(--ink-soft);}
+
+/* ---------- Qué traer ---------- */
+.bring-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem;}
+.bring-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:.95rem .8rem; text-align:center;}
+.bring-card h3{font-size:.85rem; margin:.35rem 0 .25rem;}
+.bring-card p{font-size:.76rem; color:var(--ink-soft); margin:0;}
+.bring-ico{font-size:1.6rem; display:block;}
+
+/* ---------- Comparativa "¿dónde consultar?" ---------- */
+.compare{display:grid; gap:.8rem;}
+.compare .card h3{font-size:1rem; display:flex; align-items:center; gap:.4rem;}
+.compare ul{margin:.4rem 0 0; padding-left:1.1rem; font-size:.92rem; color:var(--ink-soft);}
+.compare li{margin-bottom:.3rem;}
+
+/* ---------- Acordeones: señales de alarma y FAQ ---------- */
+details{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:.2rem .9rem; margin-bottom:.6rem;
+}
+summary{
+  cursor:pointer; list-style:none; padding:.85rem 1.8rem .85rem 0;
+  font-weight:600; font-size:.96rem; position:relative;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{
+  content:"⌄"; position:absolute; right:0; top:.7rem;
+  font-size:1.2rem; color:var(--primary); font-weight:700;
+  transition:transform .2s ease; display:inline-block;
+}
+details[open] summary::after{transform:rotate(180deg);}
+details p, details ul{font-size:.91rem; color:var(--ink-soft); padding-bottom:.8rem; margin:0;}
+details ul{padding-left:1.1rem;}
+details.alarm{border-left:4px solid var(--danger);}
+details.alarm summary{color:#6E1813;}
+
+/* ---------- Orientador interactivo ---------- */
+.orientador-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem;}
+.ori-checks{display:grid; gap:.6rem; border:0; padding:0; margin:0 0 1rem;}
+.ori-checks label{
+  display:flex; align-items:flex-start; gap:.6rem; font-size:.92rem;
+  background:var(--bg); border:1px solid var(--line); border-radius:10px;
+  padding:.7rem .8rem; cursor:pointer;
+}
+.ori-checks input{margin-top:.2rem; width:1.15rem; height:1.15rem; flex-shrink:0;}
+.ori-actions{display:flex; gap:.6rem; margin-top:.8rem; flex-wrap:wrap;}
+.ori-result-card{border-radius:var(--radius); padding:1.1rem; border:1px solid var(--line); margin-bottom:.9rem;}
+.ori-result-card h3{margin-bottom:.5rem;}
+.ori-result-card .ori-disclaimer{font-size:.8rem; color:var(--ink-soft); margin:.7rem 0 0; border-top:1px solid var(--line); padding-top:.6rem;}
+.ori-urgencia{background:#FDEAEA; border-color:#D7263D;}
+.ori-sapu{background:#FDEEE3; border-color:#E8732A;}
+.ori-cesfam{background:#E7F5EC; border-color:#3FA86B;}
+.ori-programada{background:#E8F1FB; border-color:#4F8FD1;}
+
+/* ---------- Contacto ---------- */
+.contact-list{list-style:none; margin:0 0 1rem; padding:0; display:grid; gap:.6rem;}
+.contact-list li{
+  display:flex; gap:.7rem; align-items:flex-start;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:.8rem 1rem; font-size:.93rem;
+}
+.contact-list .ico{font-size:1.1rem; line-height:1.4;}
+.map-frame{
+  border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-bottom:.6rem;
+}
+.map-frame iframe{width:100%; height:240px; border:0; display:block;}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--line); margin-top:1rem;
+  padding:1.5rem 1rem 2.5rem; font-size:.8rem; color:var(--ink-soft);
+  max-width:var(--maxw); margin-left:auto; margin-right:auto;
+}
+footer a{color:var(--ink-soft);}
+footer .sources{margin:.6rem 0 0; padding-left:1.1rem;}
+footer .sources li{margin-bottom:.2rem;}
+footer .footer-nav{list-style:none; display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:0 0 1rem; padding:0;}
+footer .footer-nav a{font-weight:600;}
+
+/* ---------- Responsive (escritorio) ---------- */
+@media (min-width:700px){
+  :root{font-size:18px;}
+  .page-head h1{font-size:2.2rem;}
+  .compare{grid-template-columns:1fr 1fr;}
+  .bring-grid{grid-template-columns:repeat(3,1fr);}
+  .portal-cards{grid-template-columns:1fr 1fr;}
+  .nav-toggle{display:none;}
+  .nav-label{display:none;}
+  .nav-menu{
+    display:flex; flex-direction:row; position:static; padding:.4rem 0; border-bottom:0;
+    box-shadow:none; gap:.5rem; flex-wrap:wrap;
+  }
+}
+
+/* =====================================================================
+   Modo de alto contraste (activado con la clase .hc en <html>)
+   Redefine las variables: la mayoría de los componentes se adaptan solos
+   porque consumen var(--bg), var(--surface), var(--ink), etc.
+   ===================================================================== */
+html.hc{
+  --bg:#000000;
+  --surface:#000000;
+  --ink:#FFFFFF;
+  --ink-soft:#F2F2F2;
+  --primary:#FFD400;
+  --primary-dark:#000000;
+  --primary-tint:#1A1A1A;
+  --accent:#FFD400;
+  --accent-tint:#1A1A1A;
+  --danger:#FF6B6B;
+  --danger-tint:#1A1A1A;
+  --line:#FFFFFF;
+}
+html.hc body{background:#000;}
+html.hc a{color:#FFD400; text-decoration:underline;}
+html.hc .eyebrow,
+html.hc .nav-menu a,
+html.hc .tag-open,
+html.hc .tag-info,
+html.hc .mini-step,
+html.hc .flow-ico,
+html.hc .note.warn,
+html.hc .btn-secondary{
+  background:#000 !important; color:#FFD400 !important; border:1px solid #fff !important;
+}
+html.hc .mini-c1, html.hc .mini-c2, html.hc .mini-c3, html.hc .mini-c4, html.hc .mini-c5,
+html.hc .triage-card, html.hc .ori-result-card{
+  background:#000 !important; color:#fff !important; border:1px solid #fff !important;
+}
+html.hc .triage-card .code, html.hc .triage-card .meta, html.hc .triage-card .examples, html.hc .triage-card h3{
+  color:#fff !important;
+}
+html.hc .call-btn, html.hc .btn-primary, html.hc .nav-menu a.active{color:#000 !important;}
+html.hc .alert{color:#fff;}

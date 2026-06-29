@@ -1,0 +1,15 @@
+{
+  "name": "Urgencia · Hospital de Frutillar",
+  "short_name": "Urgencia Frutillar",
+  "description": "Información del Servicio de Urgencia del Hospital de Frutillar: horarios, triage, tiempos de espera y preguntas frecuentes.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "es-CL",
+  "background_color": "#F7F7F3",
+  "theme_color": "#0F6E7A",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
